@@ -1,0 +1,17 @@
+ol{list-style-type: none;border:1px solid #ccc; border-radius: 5px; padding: 1px 1px 0 1px; background-color:#eee;}
+span.num{margin-right: 30px;}
+span.text, span.num{line-height: 45px;color:#444; font-size: 2em;}
+li {border:1px solid #bbb; border-radius: 5px; padding: 1px 1px 1px 10px; margin-bottom: 1px; background-color:#def;}
+li.odd {border:1px solid #bbb; border-radius: 5px; padding: 1px 1px 1px 10px; margin-bottom: 1px; background-color:#cde;}
+div.up{border:1px solid #45a; border-radius: 5px; margin-bottom:1px;; color:#45a;}
+div.down{border:1px solid #4a5; border-radius: 5px; color:#4a5;}
+div.up, div.down, div.delete{text-align: center; background-color:#fff;}
+div.up:not(.disabled):hover, div.down:not(.disabled):hover, div.delete:hover{ color:#fff;}
+div.up:not(.disabled):hover{box-shadow: 0 0 10px 1px #45a; background-color:#45a;}
+div.down:not(.disabled):hover{box-shadow: 0 0 10px 1px #4a5; background-color:#4a5;}
+div.delete:hover{box-shadow: 0 0 10px 1px #a45; background-color:#a45;}
+div.up.disabled, div.down.disabled{cursor:default; color:#aaa; border-color: #aaa;}
+div.up, div.down, div.delete{cursor:pointer;}
+div.up, div.down{line-height: 18px;height:20px; width: 20px;}
+div.movers, div.delete{float: right;width: 22px;}
+div.delete{line-height: 43px;height:43px; width: 40px;border:1px solid #a45; border-radius: 5px; margin-left: 1px; color:#a45;}

@@ -5,6 +5,7 @@ app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
 app.use(express.static('js-bundled'));
+app.use(express.static('css'));
 app.listen(port, function() {
   console.log("running at localhost: " + port)
 });

@@ -16,11 +16,16 @@ var ListItemView = React.createClass({
 			var moveUp = true;
 		if(this.props.num !== this.props.length - 1)
 			var moveDown = true;
-        return <li>
-            <span>{this.props.name}</span>
-            <span onClick={this.remove}> x</span>
-            <span onClick={function(){if(moveUp)self.moveUp();}}> up</span>
-            <span onClick={function(){if(moveDown)self.moveDown();}}> down</span>
+		//var upClass =  
+        return <li className={(this.props.num % 2 === 0)?"odd": ""}>
+			<span className='num'>{this.props.num + "."}</span>
+			<span className='text'>{this.props.name}</span>
+			<div onClick={this.remove} className='delete fa fa-times fa-2x'>
+			</div>
+			<div className='movers'>
+				<div onClick={function(){if(moveUp)self.moveUp();}} className={"up fa fa-chevron-up" + ((!moveUp)?" disabled": "")}></div>
+				<div onClick={function(){if(moveDown)self.moveDown();}} className={"down fa fa-chevron-down" + ((!moveDown)?" disabled": "")}></div>
+			</div>
 		</li>;
     }
 });

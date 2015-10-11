@@ -11,14 +11,17 @@ var ListItemView = React.createClass({
     	this.props.actions.moveTodoDown(this.props.num);
     },
     render: function() {
+		if(this.props.length === 0)
+			return <li id='no-tasks'>
+				<span className='text'>you have no tasks</span>
+			</li>;
 		var self = this;
 		if(this.props.num !== 0)
 			var moveUp = true;
 		if(this.props.num !== this.props.length - 1)
 			var moveDown = true;
-		//var upClass =  
         return <li className={(this.props.num % 2 === 0)?"odd": ""}>
-			<span className='num'>{this.props.num + "."}</span>
+			<span className='num'>{this.props.num + 1 + "."}</span>
 			<span className='text'>{this.props.name}</span>
 			<div onClick={this.remove} className='delete fa fa-times fa-2x'>
 			</div>
@@ -38,12 +41,14 @@ var ListView = React.createClass({
 		var self = this;
         return <div>
 			<ol>
-				{this.props.todos.map(function(el, i){
-					return <ListItemView num={i} name={el} actions={self.props.actions} length={self.props.todos.length}>el.text</ListItemView>
-				})}
+				{(this.props.todos.length > 0)?
+					this.props.todos.map(function(el, i){
+						return <ListItemView num={i} name={el} actions={self.props.actions} length={self.props.todos.length}></ListItemView>
+					}) : <ListItemView length={0}></ListItemView>
+				}
 			</ol>
-			<span>All: {this.props.todos.length}</span>
-            <button onClick={this.deleteAllTasks}>delete all</button> 
+			<span id="summary">All: {this.props.todos.length}</span>
+            <button tabIndex='3' onClick={this.deleteAllTasks}>delete all</button> 
 		</div>;
     }
 });
@@ -70,9 +75,11 @@ var AddNewTaskView = React.createClass({
     },
     render: function() {
         return <div>
-        	<input placeholder='add new task here...' value=
+            <button tabIndex='2' onClick={this.addNewTask}>add new task</button> 
+        	<div id="input-div">
+				<input tabIndex='1' placeholder='add new task here...' value=
         		{this.state.taskName} onChange={this.changeTaskName} onKeyPress={this.onKeyPress}/>
-            <button onClick={this.addNewTask}>add new task</button> 
+			</div>
         </div>;
     }
 });

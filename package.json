@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "browserify js-client/index.js -o js-bundled/bundle.js",
+    "postinstall": "mkdir -p js-bundled && browserify js-client/index.js -o js-bundled/bundle.js",
     "watch": "watchify js-client/index.js -o js-bundled/bundle.js -vd",
     "devstart": "start /B npm run watch & start /B npm start"
   },

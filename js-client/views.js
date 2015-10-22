@@ -43,12 +43,12 @@ var ListView = React.createClass({
 			<ol>
 				{(this.props.todos.length > 0)?
 					this.props.todos.map(function(el, i){
-						return <ListItemView num={i} name={el} actions={self.props.actions} length={self.props.todos.length}></ListItemView>
+						return <ListItemView num={i} name={el.text} actions={self.props.actions} length={self.props.todos.length}></ListItemView>
 					}) : <ListItemView length={0}></ListItemView>
 				}
-			</ol>
-			<span id="summary">All: {this.props.todos.length}</span>
-            <button tabIndex='3' onClick={this.deleteAllTasks}>delete all</button> 
+			</ol>		
+			<span className='summary-span' id="summary">All: {/* react автоматом добавит сюда еще 1 span (???)*/this.props.todos.length}</span>
+            <button className='delete-all' tabIndex='3' onClick={this.deleteAllTasks}>delete all</button> 
 		</div>;
     }
 });

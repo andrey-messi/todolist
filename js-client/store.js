@@ -4,8 +4,7 @@ var initialState = [];
 
 var exchangeElements = function(state, num, secondNum){
 	if(secondNum >= state.length || secondNum < 0)
-	//	return state;
-		return state.concat([]);
+		return state;
 	return state.map(function(el, i) {
 	  if(i === num)
 		return state[secondNum];			

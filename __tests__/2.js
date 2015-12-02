@@ -1,10 +1,11 @@
 var React = require('react');
 //итак не мокаются jest.dontMock('react-addons-test-utils');
 var testUtils = require('react-addons-test-utils');
-jest.dontMock('../js-client/views');
-var views = require('../js-client/views');
-var AddNewTaskView = views.AddNewTaskView;
-var ListView = views.ListView;
+jest.dontMock('../js-client/views/ListItemView');
+jest.dontMock('../js-client/views/AddNewTaskView');
+jest.dontMock('../js-client/views/ListView');
+var AddNewTaskView = require('../js-client/views/AddNewTaskView');
+var ListView = require('../js-client/views/ListView');
 jest.dontMock('../js-client/store');
 var store = require('../js-client/store').todos;
 jest.dontMock('../js-client/actionCreator');

@@ -3,7 +3,7 @@
 //Object.create
 require('es5-shim');*/
 var React = require('react');
-var App = require('./app');
+var App = require('./App');
 
 React.render(
   <App />,
